@@ -53,12 +53,6 @@ const CameraScreen = () => {
           buttonPositive: 'OK',
         },
       );
-
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        console.log('Camera permission granted');
-      } else {
-        console.log('Camera permission denied');
-      }
     } catch (err) {
       console.warn(err);
     }
@@ -75,12 +69,6 @@ const CameraScreen = () => {
           buttonPositive: 'OK',
         },
       );
-
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        console.log('Microphone permission granted');
-      } else {
-        console.log('Microphone permission denied');
-      }
     } catch (err) {
       console.warn(err);
     }
@@ -123,12 +111,10 @@ const CameraScreen = () => {
     setIsRecording(true);
     camera.current?.startRecording({
       onRecordingFinished: video => {
-        console.log('video ---------------', video);
         setIsRecording(false);
         setVideo(video);
       },
       onRecordingError: error => {
-        console.error('error ---------------', error);
         setIsRecording(false);
       },
     });
