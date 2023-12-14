@@ -1,12 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
 import {NavigationType} from '../../navigation';
+import StringConst from '../../utils/StringConst';
 import ButtonComp from '../../components/ButtonComp';
+import {Alert, StyleSheet, View} from 'react-native';
 import {useraction} from '../../redux/reducer/UserReducer';
 import InputTextComp from '../../components/InputTextComp';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import * as LocalAuthentication from 'expo-local-authentication';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type BiometricScreen = NativeStackScreenProps<
   NavigationType,
@@ -19,6 +21,7 @@ const BiometricScreen: React.FC<BiometricScreen> = ({navigation}) => {
   const [age, setAge] = useState<string | number>('');
   const [city, setCity] = useState<string | number>('');
   const [name, setName] = useState<string | number>('');
+  const {t} = useTranslation();
 
   const dispatch = useDispatch();
 
@@ -36,12 +39,16 @@ const BiometricScreen: React.FC<BiometricScreen> = ({navigation}) => {
   };
 
   const onPress = async () => {
-    const response = await LocalAuthentication.authenticateAsync();
-    console.log('response', response);
-    if (response?.success) {
-      navigation.navigate('PrivateDetailScreen');
+    const isEnrolled = await LocalAuthentication.isEnrolledAsync();
+    if (isEnrolled) {
+      const response = await LocalAuthentication.authenticateAsync();
+      if (response?.success) {
+        navigation.navigate('PrivateDetailScreen');
+      } else {
+        Alert.alert(t(StringConst.You_need_to_Unloack));
+      }
     } else {
-      Alert.alert('You need to Unloack');
+      return;
     }
   };
 
@@ -49,27 +56,30 @@ const BiometricScreen: React.FC<BiometricScreen> = ({navigation}) => {
     <View style={styles.container}>
       <InputTextComp
         value={name}
-        placeholder="Enter Name"
+        placeholder={t(StringConst.Enter_Name)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setName(txt)}
       />
       <InputTextComp
         value={age}
-        placeholder="Enter Age"
+        placeholder={t(StringConst.Enter_Age)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setAge(txt)}
       />
       <InputTextComp
         value={city}
-        placeholder="Enter City"
+        placeholder={t(StringConst.Enter_City)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setCity(txt)}
       />
       <View style={styles.buttonView}>
-        <ButtonComp onPress={onAddPress} title="Add" />
+        <ButtonComp onPress={onAddPress} title={t(StringConst.Add)} />
       </View>
       <View style={styles.buttonView}>
-        <ButtonComp onPress={onPress} title="Go to next screen" />
+        <ButtonComp
+          onPress={onPress}
+          title={t(StringConst.Go_to_next_screen)}
+        />
       </View>
     </View>
   );

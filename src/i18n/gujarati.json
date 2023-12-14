@@ -1,15 +1,21 @@
 {
   "translation": {
+    "Add": "ઉમેરો",
     "Hindi": "હિન્દી",
     "Cancel": "રદ કરો",
     "English": "અંગ્રેજી",
     "Login": "પ્રવેશ કરો",
     "Gujarati": "ગુજરાતી",
     "Sign up": "સાઇન અપ કરો",
+    "Enter Age": "ઉંમર દાખલ કરો",
     "Enter Name": "નામ દાખલ કરો",
+    "Enter City": "શહેર દાખલ કરો",
     "Select Language": "ભાષા પસંદ કરો",
     "Enter Password": "પાસવર્ડ દાખલ કરો",
+    "No Data Found": "કોઈ ડેટા મળ્યો નથી",
     "Create New Account": "નવું એકાઉન્ટ બનાવો",
-    "Enter Email Id Name": "ઈમેલ આઈડી નામ દાખલ કરો"
+    "Go to next screen": "આગલી સ્ક્રીન પર જાઓ",
+    "Enter Email Id Name": "ઈમેલ આઈડી નામ દાખલ કરો",
+    "You need to Unloack": "તમારે અનલોક કરવાની જરૂર છે"
   }
 }

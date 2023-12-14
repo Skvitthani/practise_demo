@@ -1,15 +1,21 @@
 {
   "translation": {
+    "Add": "जोड़ना",
     "Hindi": "हिंदी",
     "English": "अंग्रेज़ी",
     "Cancel": "बंद करो",
     "Gujarati": "गुजराती",
     "Login": "लॉग इन करें",
     "Sign up": "साइन अप करें",
+    "Enter Age": "आयु दर्ज करें",
+    "Enter City": "शहर दर्ज करें",
     "Enter Name": "नाम दर्ज करें",
     "Select Language": "भाषा चुने",
     "Enter Password": "पास वर्ड दर्ज करें",
+    "No Data Found": "डाटा प्राप्त नहीं हुआ",
     "Create New Account": "नया खाता बनाएँ",
-    "Enter Email Id Name": "ईमेल आईडी नाम दर्ज करें"
+    "Go to next screen": "अगली स्क्रीन पर जाएँ",
+    "Enter Email Id Name": "ईमेल आईडी नाम दर्ज करें",
+    "You need to Unloack": "आपको अनलॉक करने की आवश्यकता है"
   }
 }

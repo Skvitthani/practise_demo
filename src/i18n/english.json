@@ -1,15 +1,21 @@
 {
   "translation": {
+    "Add": "Add",
     "Hindi": "Hindi",
     "Login": "Login",
     "Cancel": "Cancel",
     "English": "English",
     "Sign up": "Sign up",
     "Gujarati": "Gujarati",
+    "Enter Age": "Enter Age",
+    "Enter City": "Enter City",
     "Enter Name": "Enter Name",
+    "No Data Found": "No Data Found",
     "Enter Password": "Enter Password",
     "Select Language": "Select Language",
+    "Go to next screen": "Go to next screen",
     "Create New Account": "Create New Account",
-    "Enter Email Id Name": "Enter Email Id Name"
+    "Enter Email Id Name": "Enter Email Id Name",
+    "You need to Unloack": "You need to Unloack"
   }
 }

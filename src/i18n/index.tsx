@@ -20,7 +20,7 @@ const languageDetector: languageDetectorType = {
   detect: async callback => {
     const savedDataJSON = await getItemFromAsync(lang);
     const lng = savedDataJSON ? savedDataJSON : null;
-    const selectLanguage = lng || 'en';
+    const selectLanguage = lng || 'gj';
 
     callback(selectLanguage);
   },

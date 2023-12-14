@@ -1,9 +1,10 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-
+import {NavigationType} from '../../navigation';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {NavigationType} from '../../navigation';
+import StringConst from '../../utils/StringConst';
+import {useTranslation} from 'react-i18next';
 
 type PrivateDetailScreen = NativeStackScreenProps<
   NavigationType,
@@ -26,6 +27,7 @@ interface flatListItem {
 
 const PrivateDetailScreen: React.FC<PrivateDetailScreen> = () => {
   const data = useSelector((state: RootState) => state?.user?.userData);
+  const {t} = useTranslation();
 
   const renderItem = ({item}: {item: flatListItem}) => {
     return (
@@ -40,7 +42,7 @@ const PrivateDetailScreen: React.FC<PrivateDetailScreen> = () => {
   const ListEmptyComponent = () => {
     return (
       <View style={styles.emptyView}>
-        <Text style={styles.noDataText}>No Data Found</Text>
+        <Text style={styles.noDataText}>{t(StringConst.No_Data_Found)}</Text>
       </View>
     );
   };
