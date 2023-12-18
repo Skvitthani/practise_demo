@@ -3,5 +3,6 @@ export type NavigationType = {
   LoginScreen: undefined;
   CameraScreen: undefined;
   TicTokScreen: undefined;
+  ZustandScreen: undefined;
   CreateAccountScreen: undefined;
 };

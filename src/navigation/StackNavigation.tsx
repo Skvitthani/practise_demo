@@ -8,6 +8,7 @@ import TicTokScreen from '../screen/TicTokView/TicTokScreen';
 import LoginScreen from '../screen/localization/LoginScreen';
 import CameraScreen from '../screen/visionCamera/CameraScreen';
 import CreateAccountScreen from '../screen/localization/CreateAccountScreen';
+import ZustandScreen from '../screen/zustand/ZustandScreen';
 
 const Stack = createNativeStackNavigator<NavigationType>();
 
@@ -15,6 +16,7 @@ const StackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="ZustandScreen" component={ZustandScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen
           name="CreateAccountScreen"
