@@ -1,12 +1,12 @@
-import i18n from '../../i18n';
+import i18n from '../../../i18n';
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {NavigationType} from '../../navigation';
-import StringConst from '../../utils/StringConst';
-import ButtonComp from '../../components/ButtonComp';
-import InputTextComp from '../../components/InputTextComp';
-import LanguageModal from '../../components/LanguageModal';
-import {lang, setItemInAsync} from '../../utils/helperFunction';
+import {NavigationType} from '../../../navigation';
+import StringConst from '../../../utils/StringConst';
+import ButtonComp from '../../../components/ButtonComp';
+import InputTextComp from '../../../components/InputTextComp';
+import LanguageModal from '../../../components/LanguageModal';
+import {lang, setItemInAsync} from '../../../utils/helperFunction';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
@@ -25,12 +25,14 @@ const LoginScreen: React.FC<LoginScreen> = ({navigation}) => {
     <View style={styles.container}>
       <SafeAreaView />
       <InputTextComp
+        inputTestID="name_input_text"
         value={email}
         placeholder={t(StringConst.Enter_Name)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setEmail(txt)}
       />
       <InputTextComp
+        inputTestID="password_input_text"
         value={password}
         placeholder={t(StringConst.Enter_Password)}
         inputStyle={styles.inputStyle}
@@ -42,6 +44,7 @@ const LoginScreen: React.FC<LoginScreen> = ({navigation}) => {
       </View>
 
       <Text
+        testID="create_account_screen_press"
         style={styles.createNewAccount}
         onPress={() => {
           navigation.navigate('CreateAccountScreen');
@@ -50,6 +53,7 @@ const LoginScreen: React.FC<LoginScreen> = ({navigation}) => {
       </Text>
       <View style={styles.laugBtn}>
         <ButtonComp
+          TitleTestId="select_language_button"
           title={t(StringConst.Select_Language)}
           onPress={() => {
             setLangModalVisible(!langModalVisible);
@@ -57,6 +61,7 @@ const LoginScreen: React.FC<LoginScreen> = ({navigation}) => {
         />
       </View>
       <LanguageModal
+        selectLanguageTestID={'select_language_button'}
         onApplyPress={selectedLang => {
           i18n.changeLanguage(selectedLang);
           setItemInAsync(lang, selectedLang);

@@ -3,6 +3,7 @@ import {StyleProp, StyleSheet, TextInput, TextStyle} from 'react-native';
 
 export interface TextInputComp {
   placeholder?: string;
+  inputTestID?: string;
   value?: string | number;
   inputStyle?: StyleProp<TextStyle>;
   onChangeText?: (text: string | number) => void;
@@ -13,9 +14,11 @@ const InputTextComp = ({
   inputStyle,
   placeholder,
   onChangeText,
+  inputTestID,
 }: TextInputComp) => {
   return (
     <TextInput
+      testID={inputTestID}
       value={value?.toString()}
       placeholder={placeholder}
       onChangeText={onChangeText}

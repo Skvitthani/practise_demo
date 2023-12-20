@@ -6,7 +6,7 @@ export const setItemInAsync = async (storageKey: string, value: any) => {
 
 export const getItemFromAsync = async (itemName: string) => {
   const item = (await AsyncStorage.getItem(itemName)) as any;
-  return JSON.parse(item);
+  return item ? JSON.parse(item) : undefined;
 };
 
 export const lang = 'language';

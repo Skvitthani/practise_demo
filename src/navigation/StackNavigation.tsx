@@ -5,9 +5,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // Screens
 import TicTokScreen from '../screen/TicTokView/TicTokScreen';
-import LoginScreen from '../screen/localization/LoginScreen';
+import LoginScreen from '../screen/localization/loginScreen/LoginScreen';
 import CameraScreen from '../screen/visionCamera/CameraScreen';
-import CreateAccountScreen from '../screen/localization/CreateAccountScreen';
+import CreateAccountScreen from '../screen/localization/createAccountscreen/CreateAccountScreen';
 
 const Stack = createNativeStackNavigator<NavigationType>();
 

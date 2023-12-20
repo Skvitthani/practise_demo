@@ -9,27 +9,23 @@ import {
 } from 'react-native';
 import React from 'react';
 import ButtonComp from './ButtonComp';
-import StringConst from '../utils/StringConst';
 import {useTranslation} from 'react-i18next';
+import StringConst from '../utils/StringConst';
 
-const {height, width} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 interface LanguageModal {
-  modalVisible: boolean;
-  onRequestClose: () => void;
+  modalVisible?: boolean;
+  selectLanguageTestID?: string;
+  onRequestClose?: () => void;
   onApplyPress: (selectedLang: string) => void;
-}
-
-interface item {
-  id: number;
-  title: string;
-  value: string;
 }
 
 const LanguageModal = ({
   modalVisible,
   onRequestClose,
   onApplyPress,
+  selectLanguageTestID,
 }: LanguageModal) => {
   const languageData = [
     {
@@ -66,6 +62,7 @@ const LanguageModal = ({
               renderItem={({item, index}) => {
                 return (
                   <TouchableOpacity
+                    testID={selectLanguageTestID}
                     key={index}
                     style={styles.languageItem}
                     onPress={() => {

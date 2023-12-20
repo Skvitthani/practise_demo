@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App describe renders correctly 1`] = `
+<mocked-Navigator
+  screenOptions={
+    {
+      "headerShown": false,
+    }
+  }
+>
+  <mocked-Screen
+    component={[Function]}
+    name="LoginScreen"
+  />
+  <mocked-Screen
+    component={[Function]}
+    name="CreateAccountScreen"
+  />
+  <mocked-Screen
+    component={[Function]}
+    name="TicTokScreen"
+  />
+  <mocked-Screen
+    component={[Function]}
+    name="CameraScreen"
+  />
+</mocked-Navigator>
+`;

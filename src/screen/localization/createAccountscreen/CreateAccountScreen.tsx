@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {NavigationType} from '../../navigation';
-import StringConst from '../../utils/StringConst';
+import {NavigationType} from '../../../navigation';
+import StringConst from '../../../utils/StringConst';
 import {View, Text, StyleSheet} from 'react-native';
-import ButtonComp from '../../components/ButtonComp';
-import InputTextComp from '../../components/InputTextComp';
+import ButtonComp from '../../../components/ButtonComp';
+import InputTextComp from '../../../components/InputTextComp';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type CreateAccountScreen = NativeStackScreenProps<
@@ -24,18 +24,21 @@ const CreateAccountScreen: React.FC<CreateAccountScreen> = ({navigation}) => {
     <View style={styles.container}>
       <Text style={styles.title}>{t(StringConst.Sign_up)}</Text>
       <InputTextComp
+        inputTestID="name_text_input"
         value={name}
         placeholder={t(StringConst.Enter_Name)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setName(txt)}
       />
       <InputTextComp
+        inputTestID="email_text_input"
         value={email}
         placeholder={t(StringConst.Enter_Email_Id_Name)}
         inputStyle={styles.inputStyle}
         onChangeText={(txt: string | number) => setEmail(txt)}
       />
       <InputTextComp
+        inputTestID="password_text_input"
         value={password}
         placeholder={t(StringConst.Enter_Password)}
         inputStyle={styles.inputStyle}
@@ -44,6 +47,7 @@ const CreateAccountScreen: React.FC<CreateAccountScreen> = ({navigation}) => {
 
       <View style={styles.loginBtn}>
         <ButtonComp
+          ButtontestID="sign_up_button"
           title={t(StringConst.Sign_up)}
           onPress={() => navigation.goBack()}
         />

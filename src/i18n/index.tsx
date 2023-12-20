@@ -19,9 +19,11 @@ const languageDetector: languageDetectorType = {
   async: true,
   detect: async callback => {
     const savedDataJSON = await getItemFromAsync(lang);
+    console.log('savedDataJSON', savedDataJSON);
     const lng = savedDataJSON ? savedDataJSON : null;
+    console.log('lng', lng);
     const selectLanguage = lng || 'en';
-
+    console.log('selectLanguage', selectLanguage);
     callback(selectLanguage);
   },
   cacheUserLanguage: () => {},
