@@ -1,7 +1,6 @@
 import Video from 'react-native-video';
 import React, {memo, useEffect, useRef, useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   Pressable,
@@ -20,9 +19,10 @@ interface Videodata {
     caption: string;
   };
   activeId: number;
+  videoViewTestId?: string;
 }
 
-const VideoPostComp = ({Videodata, activeId}: Videodata) => {
+const VideoPostComp = ({Videodata, activeId, videoViewTestId}: Videodata) => {
   const {height} = useWindowDimensions();
 
   const videoRef = useRef(null);
@@ -58,7 +58,10 @@ const VideoPostComp = ({Videodata, activeId}: Videodata) => {
       {playPause && (
         <Image source={ImageConst.play} style={styles.playButton} />
       )}
-      <Pressable onPress={onPress} style={styles.content}>
+      <Pressable
+        testID={videoViewTestId}
+        onPress={onPress}
+        style={styles.content}>
         <LinearGradient
           colors={['transparent', 'rgba(0,0,0,0.8)']}
           style={[StyleSheet.absoluteFillObject, styles.overLay]}

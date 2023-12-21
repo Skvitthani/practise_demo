@@ -1,0 +1,880 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TikTokScreen renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "black",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "caption": "Piano practice",
+          "id": 4,
+          "video": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-videos/4.mp4",
+        },
+        {
+          "caption": "Caption of the post",
+          "id": 2,
+          "video": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-videos/2.mp4",
+        },
+        {
+          "caption": "Heyy there",
+          "id": 3,
+          "video": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-videos/3.mp4",
+        },
+        {
+          "caption": "Caption for post one",
+          "id": 1,
+          "video": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-videos/1.mp4",
+        },
+        {
+          "caption": "Heyy How are you!",
+          "id": 5,
+          "video": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/vertical-videos/5.mp4",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={3}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    onViewableItemsChanged={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={[]}
+    testID="List_Data_FlatList"
+    viewabilityConfig={
+      {
+        "viewAreaCoveragePercentThreshold": 50,
+      }
+    }
+    viewabilityConfigCallbackPairs={
+      [
+        {
+          "onViewableItemsChanged": [Function],
+          "viewabilityConfig": {
+            "viewAreaCoveragePercentThreshold": 50,
+          },
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "height": 1334,
+            }
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "padding": 10,
+              }
+            }
+          >
+            <RNCSafeAreaView
+              edges={
+                {
+                  "bottom": "additive",
+                  "left": "additive",
+                  "right": "additive",
+                  "top": "additive",
+                }
+              }
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "flex-end",
+                    "flexDirection": "row",
+                    "marginTop": "auto",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Piano practice
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "gap": 20,
+                    }
+                  }
+                >
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/heart.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/share.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/bookmark.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </RNCSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "height": 1334,
+            }
+          }
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../assets/Images/play.png",
+              }
+            }
+            style={
+              {
+                "alignSelf": "center",
+                "height": 75,
+                "position": "absolute",
+                "tintColor": "rgba(255,255,255,0.6)",
+                "top": "50%",
+                "width": 75,
+              }
+            }
+          />
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "padding": 10,
+              }
+            }
+          >
+            <RNCSafeAreaView
+              edges={
+                {
+                  "bottom": "additive",
+                  "left": "additive",
+                  "right": "additive",
+                  "top": "additive",
+                }
+              }
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "flex-end",
+                    "flexDirection": "row",
+                    "marginTop": "auto",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Caption of the post
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "gap": 20,
+                    }
+                  }
+                >
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/heart.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/share.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/bookmark.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </RNCSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "height": 1334,
+            }
+          }
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../assets/Images/play.png",
+              }
+            }
+            style={
+              {
+                "alignSelf": "center",
+                "height": 75,
+                "position": "absolute",
+                "tintColor": "rgba(255,255,255,0.6)",
+                "top": "50%",
+                "width": 75,
+              }
+            }
+          />
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "padding": 10,
+              }
+            }
+          >
+            <RNCSafeAreaView
+              edges={
+                {
+                  "bottom": "additive",
+                  "left": "additive",
+                  "right": "additive",
+                  "top": "additive",
+                }
+              }
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "flex-end",
+                    "flexDirection": "row",
+                    "marginTop": "auto",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Heyy there
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "gap": 20,
+                    }
+                  }
+                >
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/heart.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/share.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/bookmark.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </RNCSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "height": 1334,
+            }
+          }
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../assets/Images/play.png",
+              }
+            }
+            style={
+              {
+                "alignSelf": "center",
+                "height": 75,
+                "position": "absolute",
+                "tintColor": "rgba(255,255,255,0.6)",
+                "top": "50%",
+                "width": 75,
+              }
+            }
+          />
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "padding": 10,
+              }
+            }
+          >
+            <RNCSafeAreaView
+              edges={
+                {
+                  "bottom": "additive",
+                  "left": "additive",
+                  "right": "additive",
+                  "top": "additive",
+                }
+              }
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "flex-end",
+                    "flexDirection": "row",
+                    "marginTop": "auto",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Caption for post one
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "gap": 20,
+                    }
+                  }
+                >
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/heart.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/share.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/bookmark.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </RNCSafeAreaView>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "height": 1334,
+            }
+          }
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../assets/Images/play.png",
+              }
+            }
+            style={
+              {
+                "alignSelf": "center",
+                "height": 75,
+                "position": "absolute",
+                "tintColor": "rgba(255,255,255,0.6)",
+                "top": "50%",
+                "width": 75,
+              }
+            }
+          />
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "flex": 1,
+                "padding": 10,
+              }
+            }
+          >
+            <RNCSafeAreaView
+              edges={
+                {
+                  "bottom": "additive",
+                  "left": "additive",
+                  "right": "additive",
+                  "top": "additive",
+                }
+              }
+              style={
+                {
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "flex-end",
+                    "flexDirection": "row",
+                    "marginTop": "auto",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                      }
+                    }
+                  >
+                    Heyy How are you!
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "gap": 20,
+                    }
+                  }
+                >
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/heart.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/share.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                  <Image
+                    source={
+                      {
+                        "testUri": "../../../assets/Images/bookmark.png",
+                      }
+                    }
+                    style={
+                      {
+                        "height": 30,
+                        "tintColor": "#fff",
+                        "width": 30,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </RNCSafeAreaView>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

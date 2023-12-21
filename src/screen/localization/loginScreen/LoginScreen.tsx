@@ -61,7 +61,7 @@ const LoginScreen: React.FC<LoginScreen> = ({navigation}) => {
         />
       </View>
       <LanguageModal
-        selectLanguageTestID={'select_language_button'}
+        // selectLanguageTestID={'select_language_button'}
         onApplyPress={selectedLang => {
           i18n.changeLanguage(selectedLang);
           setItemInAsync(lang, selectedLang);

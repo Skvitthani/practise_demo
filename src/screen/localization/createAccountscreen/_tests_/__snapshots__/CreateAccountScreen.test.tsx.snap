@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateAccountscreen renders correctly 1`] = `
+exports[`CreateAccountscreen renders snap 1`] = `
 <View
   style={
     {

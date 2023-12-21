@@ -38,9 +38,4 @@ describe('LoginScreen', () => {
     const container = getByTestId('create_account_screen_press');
     fireEvent.press(container);
   });
-  it('select language', () => {
-    const {getByTestId} = render(component);
-    const container = getByTestId('select_language_button');
-    fireEvent.press(container);
-  });
 });

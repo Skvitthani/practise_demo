@@ -35,9 +35,14 @@ const TicTokScreen = () => {
         translucent
       />
       <FlatList
+        testID="List_Data_FlatList"
         data={post}
         renderItem={({item}) => (
-          <VideoPostComp Videodata={item} activeId={activePostId} />
+          <VideoPostComp
+            // videoViewTestId="video_view_compo"
+            Videodata={item}
+            activeId={activePostId}
+          />
         )}
         pagingEnabled
         onEndReachedThreshold={3}

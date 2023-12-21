@@ -2,18 +2,24 @@ import {fireEvent, render} from '@testing-library/react-native';
 import React from 'react';
 import CreateAccountScreen from '../CreateAccountScreen';
 
+jest.mock('react-i18next', () => ({
+  ...jest.requireActual('react-i18next'),
+  useTranslation: () => ({
+    t: jest.fn(key => key),
+  }),
+}));
+
 const component = (
   <CreateAccountScreen
     navigation={
       {navigate: jest.fn(), goBack: jest.fn(), canGoBack: jest.fn()} as any
     }
-    // navigation={{navigate: jest.fn() goBack} as any}
     route={undefined as any}
   />
 );
 
 describe('CreateAccountscreen', () => {
-  test('renders correctly', () => {
+  test('renders snap', () => {
     const {toJSON} = render(component);
     expect(toJSON()).toMatchSnapshot();
   });
