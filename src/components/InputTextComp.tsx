@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleProp, StyleSheet, TextInput, TextStyle} from 'react-native';
 
 export interface TextInputComp {
+  isEditable?: boolean;
   placeholder?: string;
   inputTestID?: string;
   value?: string | number;
@@ -15,10 +16,13 @@ const InputTextComp = ({
   placeholder,
   onChangeText,
   inputTestID,
+  isEditable,
 }: TextInputComp) => {
   return (
     <TextInput
+      editable={isEditable}
       testID={inputTestID}
+      selectionColor={'black'}
       value={value?.toString()}
       placeholder={placeholder}
       onChangeText={onChangeText}
