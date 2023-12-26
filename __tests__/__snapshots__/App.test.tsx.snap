@@ -10,6 +10,14 @@ exports[`App describe renders correctly 1`] = `
 >
   <mocked-Screen
     component={[Function]}
+    name="RecoliScreen"
+  />
+  <mocked-Screen
+    component={[Function]}
+    name="RecoliDeailScreen"
+  />
+  <mocked-Screen
+    component={[Function]}
     name="LoginScreen"
   />
   <mocked-Screen

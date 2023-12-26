@@ -1,33 +1,35 @@
-import {UserListState} from './recoilRoot';
 import {useTranslation} from 'react-i18next';
-import StringConst from '../../utils/StringConst';
 import React, {useCallback, useState} from 'react';
-import ButtonComp from '../../components/ButtonComp';
+import StringConst from '../../../utils/StringConst';
+import ButtonComp from '../../../components/ButtonComp';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
-import RecoliDetailcomp from '../../components/RecoliDetailcomp';
+import FilterModal from '../../../components/FilterModal';
+import {UserListState, todoListStatsState} from '../recoilRoot';
+import RecoliDetailcomp from '../../../components/RecoliDetailcomp';
+import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 interface items {
   id: number;
   age: string | number;
-  gender: string | number;
   name: string | number;
 }
 
 const RecoliDeailScreen = () => {
   const [age, setAge] = useState<string | number>('');
   const [name, setName] = useState<string | number>('');
-  const [gender, setGender] = useState<string | number>('');
+
   const [isEdit, setIsEdit] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const {t} = useTranslation();
-  const setTodoList = useSetRecoilState(UserListState);
   const todoList = useRecoilValue(UserListState);
+  const setTodoList = useSetRecoilState(UserListState);
+  const {newData} = useRecoilValue(todoListStatsState) as any;
 
   const renderItem = useCallback(
     ({item, index}: {item: items; index: number}) => {
       return (
-        <View style={styles.renderItem}>
+        <View style={styles.renderItem} key={index}>
           <View style={{flex: 1.5}}>
             <RecoliDetailcomp
               title={t(StringConst?.Id)}
@@ -46,15 +48,10 @@ const RecoliDeailScreen = () => {
               value={isEdit == index ? age : item?.age}
               onChangeText={(txt: string | number) => setAge(txt)}
             />
-            <RecoliDetailcomp
-              title={t(StringConst?.city)}
-              isEditable={isEdit == index}
-              value={isEdit == index ? gender : item?.gender}
-              onChangeText={(txt: string | number) => setGender(txt)}
-            />
           </View>
           <View>
             <ButtonComp
+              ButtontestID="edit_update_button"
               title={
                 isEdit == index ? t(StringConst?.Update) : t(StringConst?.Edit)
               }
@@ -70,13 +67,12 @@ const RecoliDeailScreen = () => {
         </View>
       );
     },
-    [isEdit, age, name, gender],
+    [isEdit, age, name],
   );
 
   const onEditPress = (index: number, item: items) => {
     setAge(item?.age);
     setName(item?.name);
-    setGender(item?.gender);
     setIsEdit(index);
   };
 
@@ -108,12 +104,28 @@ const RecoliDeailScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="RecoliDetailScreen">
+      <SafeAreaView />
       <FlatList
-        data={todoList}
+        data={newData}
         renderItem={renderItem}
-        contentContainerStyle={{flex: 1}}
+        showsVerticalScrollIndicator={false}
         ListEmptyComponent={ListEmptyComponent}
+        keyExtractor={item => item?.id?.toString()}
+      />
+      <ButtonComp
+        customButtonStyle={styles.bottomBtn}
+        title="Filter"
+        onPress={() => {
+          setIsVisible(true);
+        }}
+      />
+      <FilterModal
+        setIsVisible={setIsVisible}
+        modalVisible={isVisible}
+        onRequestClose={() => {
+          setIsVisible(false);
+        }}
       />
     </View>
   );
@@ -157,5 +169,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'black',
     fontWeight: 'bold',
+  },
+  bottomBtn: {
+    marginBottom: 10,
   },
 });

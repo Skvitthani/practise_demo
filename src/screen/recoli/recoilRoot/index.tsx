@@ -1,28 +1,56 @@
-import {atom, selector} from 'recoil';
+import {Loadable, RecoilValue, WrappedValue, atom, selector} from 'recoil';
 
 export const UserListState = atom({
   key: 'UserList',
   default: [],
 });
 
-const todoListFilterState = atom({
-  key: 'TodoListFilter',
-  default: 'Show All',
+interface PrevFilterData {
+  minAge: null | number;
+  maxAge: null | number;
+}
+
+export const ageFilterState = atom({
+  key: 'ageFilterValue',
+  default: {minAge: null, maxAge: null} as PrevFilterData,
 });
 
-const filteredTodoListState = selector({
-  key: 'FilteredTodoList',
+export const todoListStatsState = selector({
+  key: 'TodoListStats',
   get: ({get}) => {
-    const filter = get(todoListFilterState);
-    const list = get(UserListState);
+    const userList = get(UserListState);
+    const filterValue = get(ageFilterState) as PrevFilterData;
 
-    switch (filter) {
-      case 'Show Completed':
-        return list.filter(item => item.isComplete);
-      case 'Show Uncompleted':
-        return list.filter(item => !item.isComplete);
-      default:
-        return list;
+    const newData:
+      | any[]
+      | Promise<any[]>
+      | RecoilValue<any[]>
+      | Loadable<any[]>
+      | WrappedValue<any[]> = [];
+
+    if (filterValue?.maxAge !== null && filterValue?.minAge !== null) {
+      const filterData = userList?.filter(
+        item =>
+          // @ts-ignore
+          item?.age >= filterValue?.minAge && item?.age <= filterValue?.maxAge,
+      );
+      newData.push(...filterData);
+    } else if (filterValue?.maxAge !== null) {
+      const MaxAgeFilterdata = userList?.filter(
+        // @ts-ignore
+        item => item?.age > filterValue?.maxAge,
+      );
+      newData.push(...MaxAgeFilterdata);
+    } else if (filterValue?.minAge !== null) {
+      const minAgeFilterdata = userList?.filter(
+        // @ts-ignore
+        item => item?.age < filterValue?.minAge,
+      );
+      newData.push(...minAgeFilterdata);
+    } else if (filterValue?.maxAge == null && filterValue?.minAge == null) {
+      newData.push(...userList);
     }
+
+    return {newData};
   },
 });

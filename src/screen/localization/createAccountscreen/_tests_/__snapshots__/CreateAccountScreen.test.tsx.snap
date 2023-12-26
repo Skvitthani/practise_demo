@@ -25,6 +25,7 @@ exports[`CreateAccountscreen renders snap 1`] = `
     onChangeText={[Function]}
     placeholder="Enter Name"
     placeholderTextColor="black"
+    selectionColor="black"
     style={
       [
         {
@@ -49,6 +50,7 @@ exports[`CreateAccountscreen renders snap 1`] = `
     onChangeText={[Function]}
     placeholder="Enter Email Id Name"
     placeholderTextColor="black"
+    selectionColor="black"
     style={
       [
         {
@@ -73,6 +75,7 @@ exports[`CreateAccountscreen renders snap 1`] = `
     onChangeText={[Function]}
     placeholder="Enter Password"
     placeholderTextColor="black"
+    selectionColor="black"
     style={
       [
         {
@@ -142,11 +145,14 @@ exports[`CreateAccountscreen renders snap 1`] = `
     >
       <Text
         style={
-          {
-            "color": "white",
-            "fontSize": 20,
-            "fontWeight": "bold",
-          }
+          [
+            {
+              "color": "white",
+              "fontSize": 20,
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
         }
       >
         Sign up

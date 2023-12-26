@@ -20,6 +20,7 @@ const RecoliDetailcomp = ({
       <Text style={styles.renderText}>{title} : </Text>
 
       <InputTextComp
+        inputTestID={'test_input'}
         value={value}
         isEditable={isEditable}
         onChangeText={onChangeText}

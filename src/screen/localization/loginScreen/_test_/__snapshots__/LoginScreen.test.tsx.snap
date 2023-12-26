@@ -13,6 +13,7 @@ exports[`LoginScreen renders correctly 1`] = `
     onChangeText={[Function]}
     placeholder="Enter Name"
     placeholderTextColor="black"
+    selectionColor="black"
     style={
       [
         {
@@ -37,6 +38,7 @@ exports[`LoginScreen renders correctly 1`] = `
     onChangeText={[Function]}
     placeholder="Enter Password"
     placeholderTextColor="black"
+    selectionColor="black"
     style={
       [
         {
@@ -105,11 +107,14 @@ exports[`LoginScreen renders correctly 1`] = `
     >
       <Text
         style={
-          {
-            "color": "white",
-            "fontSize": 20,
-            "fontWeight": "bold",
-          }
+          [
+            {
+              "color": "white",
+              "fontSize": 20,
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
         }
       >
         Login
@@ -181,11 +186,14 @@ exports[`LoginScreen renders correctly 1`] = `
     >
       <Text
         style={
-          {
-            "color": "white",
-            "fontSize": 20,
-            "fontWeight": "bold",
-          }
+          [
+            {
+              "color": "white",
+              "fontSize": 20,
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
         }
         testID="select_language_button"
       >

@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import uuid from 'react-native-uuid';
 import {useSetRecoilState} from 'recoil';
-import {UserListState} from './recoilRoot';
+import {UserListState} from '../recoilRoot';
 import {useTranslation} from 'react-i18next';
-import {View, StyleSheet} from 'react-native';
-import {NavigationType} from '../../navigation';
-import StringConst from '../../utils/StringConst';
-import ButtonComp from '../../components/ButtonComp';
-import InputTextComp from '../../components/InputTextComp';
+import {View, StyleSheet, SafeAreaView} from 'react-native';
+import {NavigationType} from '../../../navigation';
+import StringConst from '../../../utils/StringConst';
+import ButtonComp from '../../../components/ButtonComp';
+import InputTextComp from '../../../components/InputTextComp';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type RecoliScreen = NativeStackScreenProps<NavigationType, 'RecoliScreen'> & {
@@ -15,9 +15,8 @@ type RecoliScreen = NativeStackScreenProps<NavigationType, 'RecoliScreen'> & {
 };
 
 const RecoliScreen: React.FC<RecoliScreen> = ({navigation}) => {
-  const [age, setAge] = useState<string | number>('21');
+  const [age, setAge] = useState<string | number>();
   const [name, setName] = useState<string | number>('Sanket');
-  const [gender, setGender] = useState<string | number>('Surat');
 
   const {t} = useTranslation();
   const setTodoList = useSetRecoilState(UserListState);
@@ -30,7 +29,7 @@ const RecoliScreen: React.FC<RecoliScreen> = ({navigation}) => {
           {
             age: age,
             name: name,
-            gender: gender,
+
             id: uuid.v4(),
           },
         ] as any,
@@ -43,6 +42,7 @@ const RecoliScreen: React.FC<RecoliScreen> = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+      <SafeAreaView />
       <InputTextComp
         value={name}
         inputStyle={styles.inputStyle}
@@ -53,13 +53,7 @@ const RecoliScreen: React.FC<RecoliScreen> = ({navigation}) => {
         value={age}
         inputStyle={styles.inputStyle}
         placeholder={t(StringConst.enter_age)}
-        onChangeText={(txt: string | number) => setAge(txt)}
-      />
-      <InputTextComp
-        value={gender}
-        inputStyle={styles.inputStyle}
-        placeholder={t(StringConst.enter_age)}
-        onChangeText={(txt: string | number) => setGender(txt)}
+        onChangeText={(txt: string | number) => setAge(Number(txt))}
       />
 
       <View style={styles.loginBtn}>
@@ -87,6 +81,7 @@ const styles = StyleSheet.create({
   },
 
   inputStyle: {
+    padding: 10,
     width: '90%',
     marginTop: 30,
     paddingLeft: 20,

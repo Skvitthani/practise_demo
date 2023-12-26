@@ -9,8 +9,8 @@ import TicTokScreen from '../screen/TicTokView/TicTokScreen';
 import CameraScreen from '../screen/visionCamera/CameraScreen';
 import LoginScreen from '../screen/localization/loginScreen/LoginScreen';
 import CreateAccountScreen from '../screen/localization/createAccountscreen/CreateAccountScreen';
-import RecoliDeailScreen from '../screen/recoli/RecoliDeailScreen';
-import RecoliScreen from '../screen/recoli/RecoliScreen';
+import RecoliDeailScreen from '../screen/recoli/recoliDeailScreen/RecoliDeailScreen';
+import RecoliScreen from '../screen/recoli/recoliScreen/RecoliScreen';
 
 const Stack = createNativeStackNavigator<NavigationType>();
 
